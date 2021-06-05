@@ -1,6 +1,8 @@
 ## Real Estate Management System (REMS)
 REMS is a simple PHP script based on Laravel that helps you to manage small or medium Real Estate business.
 
+## Fix Image: php artisan storage:link
+
 ### Frameworks
 1. Laravel 5.6
 2. Materialize
