@@ -76,7 +76,7 @@
 
                     <div class="form-group">
                         <input type="checkbox" id="featured" name="featured" class="filled-in" value="1" />
-                        <label for="featured">Nội thất</label>
+                        <label for="featured">Phát hành</label>
                     </div>
 
                     <hr>

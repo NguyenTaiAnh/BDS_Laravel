@@ -127,7 +127,7 @@ class PostController extends Controller
             if(Storage::disk('public')->exists('posts/'.$post->image)){
                 Storage::disk('public')->delete('posts/'.$post->image);
             }
-            $postimage = Image::make($image)->resize(1600, 980)->save();
+            $postimage = Image::make($image)->resize(1600, 980)->stream();
             Storage::disk('public')->put('posts/'.$imagename, $postimage);
 
         }else{

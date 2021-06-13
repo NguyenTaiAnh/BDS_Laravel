@@ -63,7 +63,7 @@
 
                             <div class="row">
                                 <button class="btn waves-effect waves-light btn-large indigo darken-4" type="submit">
-                                    GỬI ĐI
+                                    Lưu
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>

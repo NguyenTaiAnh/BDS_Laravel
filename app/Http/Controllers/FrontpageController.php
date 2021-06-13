@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gallery;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Testimonial;
 use App\Property;
@@ -21,6 +22,7 @@ class FrontpageController extends Controller
         $testimonials   = Testimonial::latest()->get();
         $posts          = Post::latest()->where('status',1)->take(6)->get();
         $galleries = Gallery::latest()->paginate(12);
+        Carbon::setLocale('vi');
 
         return view('frontend.index', compact('sliders','properties','services','testimonials','posts','galleries'));
     }
