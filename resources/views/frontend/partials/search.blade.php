@@ -28,9 +28,9 @@
                         <div class="input-field col s12 m2">
                             <select name="purpose" class="browser-default">
                                 <option value="" disabled selected>Mục đích</option>
-                                <option value="sell">Bán</option>
-                                <option value="buy">Mua</option>
-                                <option value="deposit">Ký gửi</option>
+                                <option value="sell">Mua</option>
+{{--                                <option value="buy">Mua</option>--}}
+{{--                                <option value="deposit">Ký gửi</option>--}}
                                 <option value="rent">Thuê</option>
                             </select>
                         </div>

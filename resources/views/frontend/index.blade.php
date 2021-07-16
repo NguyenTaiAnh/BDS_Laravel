@@ -67,7 +67,12 @@
                                 </div>
                                 <div class="address">
                                     <i class="small material-icons left">check_box</i>
-                                    <span>{{ ucfirst($property->type) }} for {{ $property->purpose }}</span>
+                                    @if($property->purpose === 'rent')
+                                        <span>{{ ucfirst($property->type) }} cho thuê</span>
+                                    @elseif($property->purpose === 'sell')
+                                        <span>{{ ucfirst($property->type) }} cần bán</span>
+                                    @endif
+{{--                                    <span>{{ ucfirst($property->type) }} for {{ $property->purpose }}</span>--}}
                                 </div>
 
                                 <h5 style="font-size: 18px!important; font-weight: bold">
@@ -107,26 +112,42 @@
     <section class="section grey lighten-3 center">
         <div class="container">
 
-            <h4 class="section-heading">Bộ Sưu Tập</h4>
+            <h4 class="section-heading">Người Đại Diện Website</h4>
 
             <div class="carousel testimonials">
 
-                @foreach($galleries as $gallery)
-                    @if(Storage::disk('public')->exists('gallery/'.$gallery->image) && $gallery->image)
-                        <div class="carousel-item testimonial-item" href="#{{$gallery->id}}!">
+{{--                @foreach($galleries as $gallery)--}}
+{{--                    @if(Storage::disk('public')->exists('gallery/'.$gallery->image) && $gallery->image)--}}
+{{--                        <div class="carousel-item testimonial-item" href="#{{$gallery->id}}!">--}}
 {{--                            <div class="card testimonial-card">--}}
 {{--                                <span style="height:20px;display:block;"></span>--}}
-                                <div class="card">
-                                    <div class="card-image">
-                                        <span class="card-image-bg materialboxed" style="background-image:url({{Storage::url('gallery/'.$gallery->image)}});"></span>
-                                    </div>
-                                </div>
+{{--                                <div class="card">--}}
+{{--                                    <div class="card-image">--}}
+{{--                                        <span class="card-image-bg materialboxed" style="background-image:url({{Storage::url('gallery/'.$gallery->image)}});"></span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 {{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
+
+{{--                @endforeach--}}
+
+                @foreach($user as $testimonial)
+                    <div class="carousel-item testimonial-item" href="#{{$testimonial->id}}!">
+                        <div class="card testimonial-card">
+                            <span style="height:20px;display:block;"></span>
+                            <div class="card-image testimonial-image">
+                                <img src="{{Storage::url('users/'.$testimonial->image)}}">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">{{$testimonial->name}}</span>
+                                <p>
+                                    {{$testimonial->testimonial}}
+                                </p>
+                            </div>
                         </div>
-                    @endif
-
+                    </div>
                 @endforeach
-
             </div>
 
         </div>

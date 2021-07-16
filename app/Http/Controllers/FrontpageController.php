@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gallery;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Testimonial;
@@ -10,6 +11,7 @@ use App\Property;
 use App\Service;
 use App\Slider;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 
 class FrontpageController extends Controller
 {
@@ -19,12 +21,14 @@ class FrontpageController extends Controller
         $sliders        = Slider::latest()->get();
         $properties     = Property::latest()->where('featured',1)->with('rating')->withCount('comments')->take(6)->get();
         $services       = Service::orderBy('service_order')->get();
-        $testimonials   = Testimonial::latest()->get();
+//        $testimonials   = Testimonial::latest()->get();
+        $user = User::where('role_id',2)->get();
+//        die($user);
         $posts          = Post::latest()->where('status',1)->take(6)->get();
         $galleries = Gallery::latest()->paginate(12);
         Carbon::setLocale('vi');
 
-        return view('frontend.index', compact('sliders','properties','services','testimonials','posts','galleries'));
+        return view('frontend.index', compact('sliders','properties','services','user','posts','galleries'));
     }
 
 

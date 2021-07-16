@@ -12,12 +12,12 @@
                         <span>Bảng điều khiển</span>
                     </a>
                 </li>
-{{--                <li class="{{ Request::is('admin/sliders*') ? 'active' : '' }}">--}}
-{{--                    <a href="{{ route('admin.sliders.index') }}">--}}
-{{--                        <i class="material-icons">burst_mode</i>--}}
-{{--                        <span>Sliders</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                <li class="{{ Request::is('admin/sliders*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.sliders.index') }}">
+                        <i class="material-icons">burst_mode</i>
+                        <span>Sliders</span>
+                    </a>
+                </li>
                 <li class="{{ Request::is('admin/properties*') ? 'active' : '' }}">
                     <a href="{{ route('admin.properties.index') }}">
                         <i class="material-icons">home</i>

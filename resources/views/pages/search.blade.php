@@ -36,9 +36,9 @@
                             <div class="input-field col s12">
                                 <select name="purpose" class="browser-default">
                                     <option value="" disabled selected>Mục đích</option>
-                                    <option value="sell">Bán</option>
-                                    <option value="buy">Mua</option>
-                                    <option value="deposit">Ký gửi</option>
+                                    <option value="sell">Mua</option>
+{{--                                    <option value="buy">Mua</option>--}}
+{{--                                    <option value="deposit">Ký gửi</option>--}}
                                     <option value="rent">Thuê</option>
                                 </select>
                             </div>
@@ -127,8 +127,13 @@
                                     </div>
 
                                     <h5>
-                                        &dollar;{{ $property->price }}
-                                        <small class="right">{{ $property->type }} for {{ $property->purpose }}</small>
+                                        {{ number_format($property->price) }}₫
+                                        @if($property->purpose === 'rent')
+{{--                                        <small class="right">{{ $property->type }} for {{ $property->purpose }}</small>--}}
+                                        <small class="right">{{ $property->type }} cho thuê</small>
+                                        @elseif($property->purpose === 'sell')
+                                            <small class="right">{{ $property->type }} cần bán</small>
+                                        @endif
                                     </h5>
 
                                 </div>

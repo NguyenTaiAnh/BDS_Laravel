@@ -34,7 +34,7 @@ class DashboardController extends Controller
         $properties    = Property::latest()->with('user')->take(5)->get();
         $posts         = Post::latest()->withCount('comments')->take(5)->get();
         $users         = User::with('role')->get();
-        $comments      = Comment::with('users')->take(5)->get();
+        $comments      = Comment::with('users')->take(5)->latest()->get();
         Carbon::setLocale('vi');
         return view('admin.dashboard', compact(
             'propertycount', 'postcount', 'commentcount', 'usercount',

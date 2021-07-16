@@ -129,10 +129,10 @@
                             <label>Mục đích</label>
                             <select name="purpose" class="form-control show-tick">
                                 <option value="">-- Tất cả --</option>
-                                <option value="buy" {{ $property->purpose=='buy' ? 'selected' : '' }}>Mua</option>
+{{--                                <option value="buy" {{ $property->purpose=='buy' ? 'selected' : '' }}>Mua</option>--}}
                                 <option value="rent" {{ $property->purpose=='rent' ? 'selected' : '' }}>Cho thuê</option>
                                 <option value="sell" {{ $property->purpose=='sell' ? 'selected' : '' }}>Bán</option>
-                                <option value="deposit" {{ $property->purpose=='deposit' ? 'selected' : '' }}>Ký gửi</option>
+{{--                                <option value="deposit" {{ $property->purpose=='deposit' ? 'selected' : '' }}>Ký gửi</option>--}}
                             </select>
                         </div>
                     </div>

@@ -114,9 +114,9 @@
                             <label>Mục đích</label>
                             <select name="purpose" class="form-control show-tick">
                                 <option value="">-- Tất cả --</option>
-                                <option value="buy">Mua</option>
+{{--                                <option value="buy">Mua</option>--}}
                                 <option value="sell">Bán</option>
-                                <option value="deposit">Ký gửi</option>
+{{--                                <option value="deposit">Ký gửi</option>--}}
                                 <option value="rent">Cho thuê</option>
                             </select>
                         </div>

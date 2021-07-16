@@ -1,4 +1,6 @@
 <?php
+//$exitCode = Artisan::call('storage:link', [] );
+//echo $exitCode;
 
 // FRONT-END ROUTES
 Route::get('/', 'FrontpageController@index')->name('home');
